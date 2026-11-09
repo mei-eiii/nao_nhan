@@ -1,0 +1,75 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+/* ===== Hiệu ứng xuất hiện (thay cho tailwindcss-animate) ===== */
+@keyframes nn-in {
+  from {
+    opacity: var(--nn-opacity, 1);
+    transform: translate3d(var(--nn-x, 0), var(--nn-y, 0), 0)
+      scale(var(--nn-scale, 1));
+  }
+}
+
+.animate-in {
+  animation: nn-in 0.3s ease-out backwards;
+}
+.animate-in.duration-300 {
+  animation-duration: 0.3s;
+}
+.animate-in.duration-500 {
+  animation-duration: 0.5s;
+}
+
+.fade-in {
+  --nn-opacity: 0;
+}
+.zoom-in {
+  --nn-scale: 0.9;
+  --nn-opacity: 0;
+}
+.zoom-in-90 {
+  --nn-scale: 0.9;
+  --nn-opacity: 0;
+}
+.slide-in-from-bottom-4 {
+  --nn-y: 1rem;
+}
+.slide-in-from-bottom-8 {
+  --nn-y: 2rem;
+}
+.slide-in-from-right-8 {
+  --nn-x: 2rem;
+}
+.slide-in-from-top-2 {
+  --nn-y: -0.5rem;
+}
+@keyframes nn-pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.2;
+  }
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.nn-pop {
+  animation: nn-pop 0.55s cubic-bezier(0.2, 0.9, 0.3, 1.2) both;
+}
+@keyframes nnIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-in {
+  animation: nnIn 0.3s ease-out both;
+}
